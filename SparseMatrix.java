@@ -50,7 +50,7 @@ public class SparseMatrix {
             while(tempColumn < this.colCount){
                 double haveValue = rand.nextDouble();
                 if(haveValue < 0.1)
-                    setValue((rand.nextInt(20) + 1), tempRow, tempColumn);
+                    setValue((rand.nextInt(9) + 1), tempRow, tempColumn);
                 tempColumn++;
             }
             tempRow++;
@@ -344,8 +344,15 @@ public class SparseMatrix {
     // Output the matrix to local file
     public void outputMatrix() throws FileNotFoundException{
         PrintWriter writer = new PrintWriter("output.txt");
-        writer.println("first line");
-        writer.println("second line");
+        writer.println("1");
+        writer.println("10");
+        for(int row=0; row<rowCount; row++ ){
+            for(int col=0; col<colCount; col++){
+                int val = getValue(row, col);
+                writer.print(val+".0  ");
+            }
+            writer.println("");
+        }
         writer.close();
     }
 }

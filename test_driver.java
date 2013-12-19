@@ -74,7 +74,7 @@ public class test_driver {
 	
 	//this method is called when input is needed form menu selection
 	public static char main_menu(){
-		System.out.println("Set zero:	0      Output:		 o");
+		System.out.println("Set zero:   0      Output:	     o");
 		System.out.println("Set value:  v      Show row:     r");
 		System.out.println("Get value:  g      Show column:  c");
 		System.out.println("Show short: s      Add matrices: a");
