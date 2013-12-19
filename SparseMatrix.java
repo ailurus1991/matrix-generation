@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 public class SparseMatrix {
 	
@@ -341,7 +342,10 @@ public class SparseMatrix {
     }
 
     // Output the matrix to local file
-    public void outputMatrix(){
-        
+    public void outputMatrix() throws FileNotFoundException{
+        PrintWriter writer = new PrintWriter("output.txt");
+        writer.println("first line");
+        writer.println("second line");
+        writer.close();
     }
 }

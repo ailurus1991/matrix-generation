@@ -9,7 +9,7 @@ public class test_driver {
 	public static SparseMatrix sparse_matrix_c;
 
 	//main method contains menu options
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException{
 		sparse_matrix_a = new SparseMatrix(10,10);
 		sparse_matrix_b = new SparseMatrix(10,10);
 		sparse_matrix_c = new SparseMatrix(10,10);
@@ -25,6 +25,10 @@ public class test_driver {
 			case '0':
 				which_matrix();
 				selected_matrix.generateWhole();
+				break;
+			case 'o':
+				which_matrix();
+				selected_matrix.outputMatrix();
 				break;
 			case 'r': //shows a given row
 				which_matrix();
@@ -70,7 +74,7 @@ public class test_driver {
 	
 	//this method is called when input is needed form menu selection
 	public static char main_menu(){
-		System.out.println("Set zero: 0");
+		System.out.println("Set zero:	0      Output:		 o");
 		System.out.println("Set value:  v      Show row:     r");
 		System.out.println("Get value:  g      Show column:  c");
 		System.out.println("Show short: s      Add matrices: a");
