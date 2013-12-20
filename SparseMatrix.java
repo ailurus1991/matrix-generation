@@ -57,7 +57,7 @@ public class SparseMatrix {
             }
             tempRow++;
         }
-        System.out.println("All set to zero!");
+        System.out.println("Generated a "+row+"x"+col+" sparse matrix ");
     }
 
     //Put value into the matrix. 

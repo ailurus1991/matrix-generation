@@ -75,7 +75,8 @@ public class test_driver {
 	
 	//this method is called when input is needed form menu selection
 	public static char main_menu(){
-		System.out.println("Set zero:   w      Output:       o");
+		System.out.println("==================================");
+		System.out.println("Auto mode:  w      Output:       o");
 		System.out.println("Set value:  v      Show row:     r");
 		System.out.println("Get value:  g      Show column:  c");
 		System.out.println("Show short: s      Add matrices: a");
@@ -95,12 +96,12 @@ public class test_driver {
 
 	//this method for set the matrix automaticly
 	public static int automatic_generate(){
-		System.out.println("Please type in the matrix dimension (default is 10):");
+		System.out.println("Please type in the matrix dimension (default is 10x10):");
 		System.out.print("->");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int dim = 10;
 		try{
-			dim = (br.readLine()).charAt(0);
+			dim = Integer.parseInt(br.readLine());
 		}
 		catch(Exception e){
 			System.out.println("Exception: "+ e);
