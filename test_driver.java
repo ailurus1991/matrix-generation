@@ -81,7 +81,7 @@ public class test_driver {
 		System.out.println("Get value:  g      Show column:  c");
 		System.out.println("Show short: s      Add matrices: a");
 		System.out.println("Show long:  l      Quit q:       q");
-		System.out.print("->");
+		System.out.print("-> ");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		char opt = 'z';
 		try{
@@ -96,8 +96,9 @@ public class test_driver {
 
 	//this method for set the matrix automaticly
 	public static int automatic_generate(){
-		System.out.println("Please type in the matrix dimension (default is 10x10):");
-		System.out.print("->");
+		System.out.println("==================================");
+		System.out.println("Matrix dimension (default: 10x10):");
+		System.out.print("-> ");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int dim = 10;
 		try{

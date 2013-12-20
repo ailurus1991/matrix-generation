@@ -275,10 +275,11 @@ public class SparseMatrix {
     	Node column_iterator = row_iterator;
     	while(column_iterator.getright() != row_iterator){
     		column_iterator = column_iterator.getright();
-    		System.out.print("   ("+column_iterator.getrow()+", "
-    							+column_iterator.getcolumn()+"):"
+    		System.out.print("("+column_iterator.getrow()+", "
+    							+column_iterator.getcolumn()+") :"
     							+column_iterator.getvalue());
     	}
+        System.out.println("");
     }
     
     //Display, in short form, values represented by nodes from one column.
@@ -295,10 +296,11 @@ public class SparseMatrix {
     	Node row_iterator = column_iterator;
     	while(row_iterator.getdown() != column_iterator){
     		row_iterator = row_iterator.getdown();
-    		System.out.print("   ("+row_iterator.getrow()+", "
-    							+row_iterator.getcolumn()+"):"
+    		System.out.print("("+row_iterator.getrow()+", "
+    							+row_iterator.getcolumn()+"): "
     							+row_iterator.getvalue());
     	}
+        System.out.println("");
     }
     
     //Display the entire matrix with a dot for positions not represented by a node. 
