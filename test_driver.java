@@ -22,9 +22,10 @@ public class test_driver {
 				which_matrix();
 				setvalue(selected_matrix);
 				break;
-			case '0':
+			case 'w':
+				int specifydim = automatic_generate();
 				which_matrix();
-				selected_matrix.generateWhole();
+				selected_matrix.generateWhole(specifydim, specifydim);
 				break;
 			case 'o':
 				which_matrix();
@@ -74,7 +75,7 @@ public class test_driver {
 	
 	//this method is called when input is needed form menu selection
 	public static char main_menu(){
-		System.out.println("Set zero:   0      Output:	     o");
+		System.out.println("Set zero:   w      Output:       o");
 		System.out.println("Set value:  v      Show row:     r");
 		System.out.println("Get value:  g      Show column:  c");
 		System.out.println("Show short: s      Add matrices: a");
@@ -90,6 +91,22 @@ public class test_driver {
 			return main_menu();
 		}
 		return (opt);
+	}
+
+	//this method for set the matrix automaticly
+	public static int automatic_generate(){
+		System.out.println("Please type in the matrix dimension (default is 10):");
+		System.out.print("->");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int dim = 10;
+		try{
+			dim = (br.readLine()).charAt(0);
+		}
+		catch(Exception e){
+			System.out.println("Exception: "+ e);
+			return automatic_generate();
+		}
+		return (dim);
 	}
 	
 	//this deals with the user's selection of a matrix

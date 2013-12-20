@@ -41,9 +41,11 @@ public class SparseMatrix {
     }
 
     // generate the whole sparse matrix
-    public void generateWhole(){
+    public void generateWhole(int row, int col){
         int tempRow = 0;
         int tempColumn;
+        this.rowCount = row;
+        this.colCount = col;
         Random rand = new Random();
         while(tempRow < this.rowCount){
             tempColumn = 0;
@@ -345,7 +347,7 @@ public class SparseMatrix {
     public void outputMatrix() throws FileNotFoundException{
         PrintWriter writer = new PrintWriter("output.txt");
         writer.println("1");
-        writer.println("10");
+        writer.println("20");
         for(int row=0; row<rowCount; row++ ){
             for(int col=0; col<colCount; col++){
                 int val = getValue(row, col);
