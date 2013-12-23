@@ -41,7 +41,7 @@ public class SparseMatrix {
     }
 
     // generate the whole sparse matrix
-    public void generateWhole(int row, int col){
+    public void generateWhole(int row, int col, double sparsity){
         int tempRow = 0;
         int tempColumn;
         this.rowCount = row;
@@ -51,7 +51,7 @@ public class SparseMatrix {
             tempColumn = 0;
             while(tempColumn < this.colCount){
                 double haveValue = rand.nextDouble();
-                if(haveValue < 0.1)
+                if(haveValue < sparsity)
                     setValue((rand.nextInt(9) + 1), tempRow, tempColumn);
                 tempColumn++;
             }

@@ -110,6 +110,23 @@ public class test_driver {
 		}
 		return (dim);
 	}
+
+	//this method to set the auto mode matrix sparsity
+	public static double automatic_sparsity(){
+		System.out.println("==================================");
+		System.out.println("Input the sparsity (e.g. 0.01):");
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int dim = 10;
+		try{
+			dim = Integer.parseInt(br.readLine());
+		}
+		catch(Exception e){
+			System.out.println("Exception: "+ e);
+			return automatic_generate();
+		}
+		return (dim);
+	}
 	
 	//this deals with the user's selection of a matrix
 	public static void which_matrix(){
