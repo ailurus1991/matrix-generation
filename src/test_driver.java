@@ -25,7 +25,8 @@ public class test_driver {
 			case 'w':
 				int specifydim = automatic_generate();
 				which_matrix();
-				selected_matrix.generateWhole(specifydim, specifydim);
+				double sparsity = get_sparsity();
+				selected_matrix.generateWhole(specifydim, specifydim, sparsity);
 				break;
 			case 'o':
 				which_matrix();
@@ -94,6 +95,22 @@ public class test_driver {
 		return (opt);
 	}
 
+	public static double get_sparsity(){
+		System.out.println("===============================");
+		System.out.println("Matrix sparsity (default: 0.1):");
+		System.out.println("-> ");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		double sparsity = 0.1;
+		try{
+			sparsity = Double.parseDouble(br.readLine());
+		}
+		catch(Exception e){
+			System.out.println("Exception: "+ e);
+			return automatic_generate();
+		}
+		return (sparsity);
+	}
+
 	//this method for set the matrix automaticly
 	public static int automatic_generate(){
 		System.out.println("==================================");
@@ -127,7 +144,6 @@ public class test_driver {
 		}
 		return (dim);
 	}
-	
 	
 	//this deals with the user's selection of a matrix
 	public static void which_matrix(){
