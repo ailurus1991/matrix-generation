@@ -3,7 +3,7 @@ Just a simple tool for generating sparse matrix. Currently, you can specify the 
 
 ## Menu:
 #### Auto:
-Generate the sparse matrix with specified dimension automatically.
+Generate the sparse matrix with specified dimension and sparsity automatically.
 
 #### Set & Get:
 Set and get value at specific position.
@@ -14,5 +14,9 @@ Set and get value at specific position.
 
 #### Add:
 Add two matrix to generate a new one.
+
+
+#### TODO:
+GUI Support
 
 
