@@ -84,10 +84,14 @@ public class test_driver {
 		System.out.println("Show long:  l      Quit q:       q");
 		System.out.print("-> ");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String lineT;
 		char opt = 'z';
 		try{
-			opt = (br.readLine()).charAt(0);
-		}
+            opt = (br.readLine()).charAt(0);
+		}/*
+        catch(IndexOutOfBoundsException e){
+            System.out.println("ahha");
+        }*/
 		catch(Exception e){
 			System.out.println("Exception: "+ e);
 			return main_menu();
@@ -104,6 +108,9 @@ public class test_driver {
 		try{
 			sparsity = Double.parseDouble(br.readLine());
 		}
+        catch(NumberFormatException e){
+            System.out.println("You use the default settings.");
+        }
 		catch(Exception e){
 			System.out.println("Exception: "+ e);
 			return automatic_generate();
@@ -121,6 +128,9 @@ public class test_driver {
 		try{
 			dim = Integer.parseInt(br.readLine());
 		}
+        catch(NumberFormatException e){
+            System.out.println("You use the default settings.");
+        }
 		catch(Exception e){
 			System.out.println("Exception: "+ e);
 			return automatic_generate();

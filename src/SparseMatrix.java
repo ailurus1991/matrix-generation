@@ -5,9 +5,9 @@ public class SparseMatrix {
 	
 	private int rowCount;
 	private int colCount;
-	Node enter;
+    private double gotSparsity;
 	boolean empty_matrix;
-
+    Node enter;
 	//Constructor: the new matrix should have rowCount rows and colCount columns.
     public SparseMatrix(int rowCount, int colCount){
     	this.rowCount = rowCount;
@@ -46,6 +46,7 @@ public class SparseMatrix {
         int tempColumn;
         this.rowCount = row;
         this.colCount = col;
+        this.gotSparsity = sparsity;
         Random rand = new Random();
         while(tempRow < this.rowCount){
             tempColumn = 0;
@@ -344,12 +345,12 @@ public class SparseMatrix {
     	}
     	return m;
     }
-
+    
     // Output the matrix to local file
     public void outputMatrix() throws FileNotFoundException{
-        PrintWriter writer = new PrintWriter("output.txt");
-        writer.println("1");
-        writer.println("20");
+        PrintWriter writer = new PrintWriter("../output.inp");
+        writer.println((int)(this.gotSparsity * this.colCount));
+        writer.println(this.colCount);
         for(int row=0; row<rowCount; row++ ){
             for(int col=0; col<colCount; col++){
                 int val = getValue(row, col);
@@ -358,5 +359,6 @@ public class SparseMatrix {
             writer.println("");
         }
         writer.close();
+        System.out.println("output done!!!");
     }
 }
